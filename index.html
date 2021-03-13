@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="Content-Script-Type" content="text/javascript" />
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1, minimum-scale=1"
+		/>
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<meta property="og:url" content="" />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="" />
+		<meta property="og:description" content="" />
+		<meta property="og:image" content="" />
+		<meta name="twitter:card" content="summary" />
+
+		<title>자넷</title>
+
+		<link rel="shortcut icon" href="" type="image/x-icon" />
+		<link rel="icon" href=="" type="image/x-icon" />
+
+		<link
+			rel="stylesheet"
+			href="https://uicdn.toast.com/tui.date-picker/latest/tui-date-picker.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css"
+		/>
+		<link rel="stylesheet" type="text/css" href="./style.css" />
+
+		<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+	</head>
+
+	<body>
+		<div class="body_container">
+			<header class="nav_container">
+				<nav class="nav_wrapper">
+					<img
+						class="img_logo_janet"
+						src="./src/assets/logo_janet.png"
+						alt="janet"
+					/>
+					<div class="nav_group">
+						<ul class="display_flex_center_row">
+							<li class="nav_menu_01"><a href="/">서비스</a></li>
+							<li class="nav_menu_02"><a href="/">기업회원 로그인</a></li>
+							<li class="nav_menu_03"><a href="/">회원가입</a></li>
+							<li class="nav_menu_cart">
+								<img src="./src/assets/icon_cart.png" alt="cart" />
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</header>
+			<section class="section section_intro_head">
+				<div class="intro_head_content">
+					<img src="./src/assets/logo_janet_big.png" alt="" />
+					<div class="intro_head_content_text">
+						<h2>기업회원으로 로그인하시고</h2>
+						<h2><span> 다양한 상품과 혜택</span>을 확인하세요!</h2>
+					</div>
+					<button type="button" class="button_login_corp">
+						기업회원 로그인
+					</button>
+				</div>
+			</section>
+			<section class="menu_container_wrapper">
+				<nav class="menu_container">
+					<ul>
+						<li class="active_menu">자넷</li>
+						<li>자넷 강사뱅크</li>
+						<li>직업훈련포털</li>
+						<li>NINE</li>
+						<li>제휴안내</li>
+						<li>FAQ</li>
+					</ul>
+				</nav>
+				<nav class="sub_menu_container">
+					<ul>
+						<li class="active_sub_menu">배너광고</li>
+						<li>배너패키지 상품</li>
+						<li>이용약관</li>
+					</ul>
+				</nav>
+			</section>
+
+			<section class="section section_content">
+				<div id="side_bar"></div>
+				<div id="side_button"></div>
+				<main class="banner_type_lists_container">
+					<div class="box_title">MAIN</div>
+					<div class="banner_type_list_wrapper">
+						<div class="banner_type_list recommended_banner">
+							<div class="recommended_banner_sticker">추천</div>
+							<div class="banner_details_left">
+								<div class="banner_name_wrapper">
+									<h1 class="banner_name point_yellow">메인 빅</h1>
+									<span class="banner_position">TOP</span>
+								</div>
+								<div class="banner_desc">
+									최상단 노출의 위엄, 메인 상단으로 눈에 잘 띄는 상품!
+								</div>
+								<div class="banner_period_wrapper">
+									<span>기간설정</span>
+									<div class="datepicker_wrapper">
+										<div
+											class="tui-datepicker-input tui-datetime-input tui-has-focus"
+										>
+											<input
+												type="text"
+												id="tui-date-picker-target"
+												aria-label="Date-Time"
+											/>
+											<img src="./src/assets/icon_calendar.png" alt="" />
+										</div>
+
+										<div
+											id="tui-date-picker-container"
+											style="margin-top: -1px"
+										></div>
+									</div>
+									<span class="text_from">부터</span>
+									<div class="option_period">
+										<div class="select_wrap period">
+											<ul class="default_option period">
+												<li>
+													<div class="option">
+														<p>+ 3일</p>
+													</div>
+												</li>
+											</ul>
+											<ul class="select_ul period">
+												<li>
+													<div class="option">
+														<p>+ 3일</p>
+													</div>
+												</li>
+												<li>
+													<div class="option">
+														<p>+ 4일</p>
+													</div>
+												</li>
+												<li>
+													<div class="option">
+														<p>+ 5일</p>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class="banner_option_wrapper">
+									<span>옵션선택</span>
+									<div class="options_wrapper">
+										<div class="option_device">
+											<div class="select_wrap device">
+												<ul class="default_option device">
+													<li>
+														<div class="option">
+															<p>PC</p>
+														</div>
+													</li>
+												</ul>
+												<ul class="select_ul device">
+													<li>
+														<div class="option">
+															<p>PC</p>
+														</div>
+													</li>
+													<li>
+														<div class="option">
+															<p>MOBILE</p>
+														</div>
+													</li>
+												</ul>
+											</div>
+										</div>
+										<div class="option_price">
+											<div class="select_wrap price">
+												<ul class="default_option price">
+													<li>
+														<div class="option">
+															<p>[정상가]</p>
+														</div>
+													</li>
+												</ul>
+												<ul class="select_ul price">
+													<li>
+														<div class="option">
+															<p>[정상가]</p>
+														</div>
+													</li>
+													<li>
+														<div class="option">
+															<p>[할인가]</p>
+														</div>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="banner_details_right">
+								<div class="banner_price">100,000원</div>
+								<div class="display_flex_center_row option_cart_wrapper">
+									<div class="cart_options">
+										<div class="select_wrap cart_options">
+											<ul class="default_option cart_options">
+												<li>
+													<div class="option">
+														<p>상세</p>
+													</div>
+												</li>
+											</ul>
+											<ul class="select_ul cart_options">
+												<li>
+													<div class="option">
+														<p>상세</p>
+													</div>
+												</li>
+												<li>
+													<div class="option">
+														<p>상세</p>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<button type="button" class="button_cart">
+										장바구니 담기
+									</button>
+								</div>
+							</div>
+						</div>
+						<div class="banner_sub_details_wrapper">
+							<div class="banner_sub_details_position">
+								<h2>배너위치</h2>
+								<img src="./src/assets/img_banner_position.png" alt="" />
+							</div>
+							<div class="banner_sub_details_size">
+								<h2>배너사이즈</h2>
+							</div>
+						</div>
+					</div>
+					<div class="banner_type_list_wrapper">
+						<div class="banner_type_list popular_banner">
+							<div class="popular_banner_sticker">인기</div>
+							<div class="banner_details_left">
+								<div class="banner_name_wrapper">
+									<h1 class="banner_name point_blue">메인 INFO 하단</h1>
+									<span class="banner_position">TOP</span>
+								</div>
+								<div class="banner_desc">선호도 1위 자넷 첫페이지에 노출!</div>
+							</div>
+							<div class="banner_details_right">
+								<div class="banner_price">100,000원</div>
+								<div class="display_flex_center_row option_cart_wrapper">
+									<div class="cart_options">
+										<div class="select_wrap cart_options">
+											<ul class="default_option cart_options">
+												<li>
+													<div class="option">
+														<p>상세</p>
+													</div>
+												</li>
+											</ul>
+											<ul class="select_ul cart_options">
+												<li>
+													<div class="option">
+														<p>상세</p>
+													</div>
+												</li>
+												<li>
+													<div class="option">
+														<p>상세</p>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<button type="button" class="button_cart">
+										장바구니 담기
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="banner_type_list_wrapper">
+						<div class="banner_type_list">
+							<div class="banner_details_left">
+								<div class="banner_name_wrapper">
+									<h1 class="banner_name point_blue">메인 중앙 스크롤</h1>
+									<span class="banner_position">중앙</span>
+								</div>
+								<div class="banner_desc">선호도 1위 자넷 첫페이지에 노출!</div>
+							</div>
+							<div class="banner_details_right">
+								<div class="banner_price">100,000원</div>
+								<div class="display_flex_center_row option_cart_wrapper">
+									<div class="cart_options">
+										<div class="select_wrap cart_options">
+											<ul class="default_option cart_options">
+												<li>
+													<div class="option">
+														<p>상세</p>
+													</div>
+												</li>
+											</ul>
+											<ul class="select_ul cart_options">
+												<li>
+													<div class="option">
+														<p>상세</p>
+													</div>
+												</li>
+												<li>
+													<div class="option">
+														<p>상세</p>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<button type="button" class="button_cart">
+										장바구니 담기
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="banner_type_list_wrapper">
+						<div class="banner_type_list">
+							<div class="banner_details_left">
+								<div class="banner_name_wrapper">
+									<h1 class="banner_name point_blue">메인 띠</h1>
+									<span class="banner_position">중앙</span>
+								</div>
+								<div class="banner_desc">선호도 1위 자넷 첫페이지에 노출!</div>
+							</div>
+							<div class="banner_details_right">
+								<div class="banner_price">100,000원</div>
+								<div class="display_flex_center_row option_cart_wrapper">
+									<div class="cart_options">
+										<div class="select_wrap cart_options">
+											<ul class="default_option cart_options">
+												<li>
+													<div class="option">
+														<p>상세</p>
+													</div>
+												</li>
+											</ul>
+											<ul class="select_ul cart_options">
+												<li>
+													<div class="option">
+														<p>상세</p>
+													</div>
+												</li>
+												<li>
+													<div class="option">
+														<p>상세</p>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<button type="button" class="button_cart">
+										장바구니 담기
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="banner_type_list_wrapper">
+						<div class="banner_type_list">
+							<div class="banner_details_left">
+								<div class="banner_name_wrapper">
+									<h1 class="banner_name point_blue">메인 액자형</h1>
+									<span class="banner_position">중앙</span>
+								</div>
+								<div class="banner_desc">선호도 1위 자넷 첫페이지에 노출!</div>
+							</div>
+							<div class="banner_details_right">
+								<div class="banner_price">100,000원</div>
+								<div class="display_flex_center_row option_cart_wrapper">
+									<div class="cart_options">
+										<div class="select_wrap cart_options">
+											<ul class="default_option cart_options">
+												<li>
+													<div class="option">
+														<p>상세</p>
+													</div>
+												</li>
+											</ul>
+											<ul class="select_ul cart_options">
+												<li>
+													<div class="option">
+														<p>상세</p>
+													</div>
+												</li>
+												<li>
+													<div class="option">
+														<p>상세</p>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<button type="button" class="button_cart">
+										장바구니 담기
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</main>
+			</section>
+			<section class="section CS_wrapper">
+				<div class="display_flex_center_column CS_left">
+					<div class="CS_left_content">
+						<img
+							class="CS_logo"
+							src="./src/assets/logo_janet_big.png"
+							alt="janet"
+						/>
+						<div>
+							<h2>고객센터</h2>
+							<img
+								class="icon_headphone"
+								src="./src/assets/icon_headphones.png"
+								alt=""
+							/>
+						</div>
+					</div>
+				</div>
+				<div class="display_flex_center_column CS_right">
+					<div class="CS_right_content">
+						<div class="connections_wrapper">
+							<div class="connection_phone">
+								문의방법&nbsp;&nbsp;:&nbsp;&nbsp;<span>032 - 724 - 9060</span>
+							</div>
+							<div class="connections">
+								<div>
+									FAX) 02-0000-0000 (대표)&nbsp;&nbsp;세금계산서) 02-0000-0000
+								</div>
+								<div>EMAIL ) JANET@nNINE2021.com</div>
+							</div>
+						</div>
+						<div class="connections_wrapper">
+							상담가능시간 : 평일 09:00 - 18:00 (토,일,공휴일 휴무)
+						</div>
+						<div class="connections_wrapper">
+							결제수단 : 신용카드 / 휴대폰 / 실시간 계좌이체 / 네이버페이
+						</div>
+					</div>
+				</div>
+			</section>
+			<footer>
+				<div class="footer_wrapper">
+					<ul class="display_flex_center_row">
+						<li>회사소개</li>
+						<li>회원약관</li>
+						<li class="privacy_policy">개인정보처리방침</li>
+						<li>제휴문의</li>
+						<li>FAQ</li>
+					</ul>
+					<div class="display_flex_center_column company_info">
+						<img
+							class="img_logo_janet"
+							src="./src/assets/logo_janet_purple.png"
+							alt="janet"
+						/>
+						<div>
+							<span>서울시 00구 000로 123 0000빌딩 0층</span>
+							<span>사업자등록번호 000-000-0000</span>
+							<span>통신판매업 신고번호 0000-0000-0000</span>
+						</div>
+						<div class="copyright">
+							Copyright ⓒ JANET Corp. All Right Reserved.
+						</div>
+						<div class="display_flex_center_row sns_group">
+							<a href="/">
+								<img src="./src/assets/icon_insta.png" alt="" />
+							</a>
+							<a href="/">
+								<img src="./src/assets/icon_facebook.png" alt="" />
+							</a>
+							<a href="/">
+								<img src="./src/assets/icon_blog.png" alt="" />
+							</a>
+							<a href="/">
+								<img src="./src/assets/icon_youtube.png" alt="" />
+							</a>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+		<script src="https://uicdn.toast.com/tui.date-picker/latest/tui-date-picker.js"></script>
+		<script type="text/javascript" src="./script.js"></script>
+	</body>
+</html>

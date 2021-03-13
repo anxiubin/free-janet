@@ -1,0 +1,16 @@
+<div class="side_bar_menu">
+	<ul>
+		<li class="active_side_bar_menu">메인</li>
+		<li>로그인</li>
+		<li>자격증정보</li>
+		<li>커뮤니티</li>
+		<li>이동메뉴바</li>
+	</ul>
+</div>
+
+<script type="text/javascript">
+	$(".side_bar_menu ul li").click(function () {
+		$(".side_bar_menu ul li").removeClass("active_side_bar_menu")
+		$(this).addClass("active_side_bar_menu")
+	})
+</script>
